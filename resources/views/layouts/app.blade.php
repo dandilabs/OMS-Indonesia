@@ -91,7 +91,17 @@
 											<li><a href="testimonials.html">Testimonials</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">My Account</a>
+									<li><a href="{{route('admin.dashboard')}}">About me</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									@auth
+										@if(Auth::user()->utype == 'ADM')
+											<li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+										@else
+											
+										@endif
+									@endif
+
+                                    {{-- <li class="dropdown"><a href="#">My Account</a>
 									@auth
 											@if(Auth::user()->utype == 'ADM')
 											<ul>
@@ -105,8 +115,7 @@
                                         </ul>
 										@endif
 									@endif
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </nav>

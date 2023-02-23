@@ -285,6 +285,11 @@
 <script src="{{asset('vendor/js/scripts.js')}}"></script>
 <!-- Custom JS File -->
 <script src="{{asset('vendor/js/custom.js')}}"></script>
+<!-- Datatables-->
+<script src="{{asset('vendor/bundles/datatables/datatables.min.js')}}"></script>
+<script src="{{asset('vendor/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Page Specific JS File -->
+<script src="{{asset('vendor/js/page/datatables.js')}}"></script>
 </body>
 
 
