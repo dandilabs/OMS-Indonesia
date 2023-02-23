@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2023 at 01:06 PM
+-- Generation Time: Feb 23, 2023 at 12:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -34,6 +34,15 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'Honda', 'Honda', '2023-02-23 10:05:53', '2023-02-23 10:05:53'),
+(2, 'Yamaha', 'Yamaha', '2023-02-23 10:05:53', '2023-02-23 10:05:53'),
+(3, 'Suzuki', 'suzuki', '2023-02-23 03:36:58', '2023-02-23 03:36:58');
 
 -- --------------------------------------------------------
 
@@ -129,7 +138,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `utype`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'adminofficial@bprrb.com', NULL, '$2y$10$CNc2LGpYTKEWrw4yDd0q4.z26nkWikV.shlfrX/wEaBL0c7MyIgnK', 'ADM', NULL, '2023-02-21 02:08:03', '2023-02-21 02:08:03'),
-(2, 'Dandi Hermawan', 'dandihermawan@bprrb.com', NULL, '$2y$10$vccT.emoXqkXQJLL8QdiOO0QW8OFCtoUe0PYZ5ZkYTjsnXQl2O/I6', 'USR', NULL, '2023-02-21 02:18:06', '2023-02-21 02:18:06');
+(2, 'Dandi Hermawan', 'dandihermawan@bprrb.com', NULL, '$2y$10$vccT.emoXqkXQJLL8QdiOO0QW8OFCtoUe0PYZ5ZkYTjsnXQl2O/I6', 'USR', NULL, '2023-02-21 02:18:06', '2023-02-21 02:18:06'),
+(3, 'Baru coba', 'baru@gmail.com', NULL, '$2y$10$uAcNqRVystfRfC2DYiJXtOimQp6YZyAujxZQ/tUKMyDDZVBSoxG2G', 'USR', NULL, '2023-02-23 01:20:20', '2023-02-23 01:20:20');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +193,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -207,7 +217,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
