@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Tags;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(10);
-        return view('admin.category.get', compact('categories'));
+        $data = Tags::paginate(10);
+        return view('admin.tags.get', compact('data'));
     }
 
     /**
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('admin.tags.create');
     }
 
     /**
@@ -40,12 +41,13 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required | min:3'
         ]);
-        $category = Category::create([
+        $category = Tags::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->route('category.index')->with('toast_success' ,'Add Category Success');
+        return redirect()->route('tags.index')->with('toast_success' ,'Add Tags Success');
     }
+
     /**
      * Display the specified resource.
      *
@@ -65,7 +67,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.category.edit');
+        //
     }
 
     /**
@@ -88,8 +90,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $categories = Category::findOrFail($id);
-        $categories->delete();
-        return redirect()->route('category.index')->with('toast_success', 'Category Success deleted');
+        //
     }
 }

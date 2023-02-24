@@ -19,7 +19,7 @@
     <li class="dropdown">
         <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="book"></i><span>Tags</span></a>
         <ul class="dropdown-menu">
-        <li><a class="nav-link" href="chat.html">List Tags</a></li>
+        <li><a class="nav-link" href="{{route('tags.index')}}">List Tags</a></li>
         </ul>
     </li>
     <li class="dropdown">

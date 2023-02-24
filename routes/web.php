@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboard;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TagsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,7 @@ Route::middleware('auth','authadmin')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/admin/category', CategoryController::class);
+    Route::resource('/admin/tags', TagsController::class);
 });
 
 
