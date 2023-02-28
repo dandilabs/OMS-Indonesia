@@ -67,7 +67,8 @@ class TagsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tags_data = Tags::FindorFail($id);
+        return view('admin.tags.edit', compact('tags_data'));
     }
 
     /**
@@ -79,7 +80,17 @@ class TagsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+        ]);
+
+        $tags_data = [
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
+        ]; 
+
+        Tags::whereId($id)->update($tags_data);
+        return redirect()->route('tags.index')->with('toast_success', 'Tags success updated');
     }
 
     /**
@@ -90,6 +101,8 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tags::findOrFail($id);
+        $tag->delete();
+        return redirect()->route('tags.index')->with('toast_success', 'Tags Success deleted');
     }
 }
