@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2023 at 01:30 PM
+-- Generation Time: Feb 28, 2023 at 06:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -135,8 +135,7 @@ CREATE TABLE `tags` (
 
 INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'Honda Terbaru', 'Honda-Terbaru', '2023-02-24 03:50:01', '2023-02-24 03:50:01'),
-(2, 'Yamaha Terbaru', 'Yamaha-Terbaru', '2023-02-24 03:50:01', '2023-02-24 03:50:01'),
-(3, 'Suzuki Terbaru', 'suzuki-terbaru', '2023-02-23 20:55:20', '2023-02-23 20:55:20');
+(2, 'Yamaha Terbaru', 'Yamaha-Terbaru', '2023-02-24 03:50:01', '2023-02-24 03:50:01');
 
 -- --------------------------------------------------------
 
@@ -161,9 +160,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `utype`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'adminofficial@bprrb.com', NULL, '$2y$10$CNc2LGpYTKEWrw4yDd0q4.z26nkWikV.shlfrX/wEaBL0c7MyIgnK', 'ADM', NULL, '2023-02-21 02:08:03', '2023-02-21 02:08:03'),
-(2, 'Dandi Hermawan', 'dandihermawan@bprrb.com', NULL, '$2y$10$vccT.emoXqkXQJLL8QdiOO0QW8OFCtoUe0PYZ5ZkYTjsnXQl2O/I6', 'USR', NULL, '2023-02-21 02:18:06', '2023-02-21 02:18:06'),
-(3, 'Baru coba', 'baru@gmail.com', NULL, '$2y$10$uAcNqRVystfRfC2DYiJXtOimQp6YZyAujxZQ/tUKMyDDZVBSoxG2G', 'USR', NULL, '2023-02-23 01:20:20', '2023-02-23 01:20:20');
+(1, 'Admin', 'adminofficial@bprrb.com', NULL, '$2y$10$E3fVZ1hVy6EsG11aSWFuQeW02oVBTiUlvJu3ME9HhEvV73wgPQXfi', 'ADM', NULL, '2023-02-27 20:58:00', '2023-02-27 20:58:00');
 
 --
 -- Indexes for dumped tables
@@ -253,7 +250,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
